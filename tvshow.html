@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>UrMovies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="./src/main.css">
+  <link rel="stylesheet" href="./src/animate.css">
+  <style>
+    .tvshow {
+      margin-top: -170px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form action="https://formspree.io/pandemuliada@gmail.com" method="POST" class="form" id="messageForm">
+    <div class="form-group">
+      <input type="text" id="name" name="name" class="form-control" placeholder="Your Full Name" required>
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="message" id="message" placeholder="Your Message" required></textarea>
+    </div>
+    <input type="submit" class="btn btn-primary round px-4" value="S E N D">
+  </form>
+
+  <button class="btn btn-outline-primary floating-button pulse" id="floatingBtn" data-state="false">
+    <i class="fas fa-comments fa-lg"></i>
+  </button>
+
+  <section class="fullscreen-search" id="searchContainer">
+    <button class="btn btn-outline-light round" id="btnCloseSearch">&times;</button>
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <div class="form-group mt-5 pt-4">
+          <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="Enter movie title ..."
+            autofocus>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand font-weight-bold" href="index.html">UrMovies</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="movies.html">Movies</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="tvshow.html">TV Show</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!">News</a>
+        </li>
+      </ul>
+      <a href="#!" class="btn btn-outline-primary round" id="btnOpenSearch"><i class="fas fa-search"></i></a>
+    </div>
+  </nav>
+
+
+
+  <div id="bootstrapCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active"
+        style="background: url('https://image.tmdb.org/t/p/w1280/oUuyMvdBIZiJHEGtKYrIZO7hyd7.jpg')">
+        <div class="carousel-content pr-5">
+          <h1 class="display-4 w-75 text-white font-weight-normal mb-3">Hanna</h1>
+          <p class="text-white w-75">
+            This thriller and coming-of-age drama follows the journey of an extraordinary young girl as she evades the
+            relentless pursuit of an off-book CIA agent and tries to unearth the truth behind who she is. Based on the
+            2011 Joe Wright film.
+          </p>
+          <a href="#!" class="btn btn-primary round px-3" data-toggle="modal" data-target="#exampleModal">Detail</a>
+        </div>
+      </div>
+      <div class="carousel-item"
+        style="background: url('https://image.tmdb.org/t/p/w1280/sAzw6I1G9JUxm86KokIDdQeWtaq.jpg')">
+        <div class="carousel-content pr-5">
+          <h1 class="display-4 w-75 text-white font-weight-normal mb-3">Doom Patrol</h1>
+          <p class="text-white w-75">
+            The Doom Patrol’s members each suffered horrible accidents that gave them superhuman abilities — but also
+            left them scarred and disfigured. Traumatized and downtrodden, the team found purpose through The Chief, who
+            brought them together to investigate the weirdest phenomena in existence — and to protect Earth from what
+            they find.
+          </p>
+          <a href="#!" class="btn btn-primary round px-3" data-toggle="modal" data-target="#exampleModal">Detail</a>
+        </div>
+      </div>
+      <div class="carousel-item"
+        style="background: url('https://image.tmdb.org/t/p/w1280/gX8SYlnL9ZznfZwEH4KJUePBFUM.jpg')">
+        <div class="carousel-content pr-5">
+          <h1 class="display-4 w-75 text-white font-weight-normal mb-3">Game of Thrones</h1>
+          <p class="text-white w-75">
+            Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads
+            to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected
+            military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors
+            beyond.
+          </p>
+          <a href="#!" class="btn btn-primary round px-3" data-toggle="modal" data-target="#exampleModal">Detail</a>
+        </div>
+      </div>
+      <div class="carousel-item"
+        style="background: url('https://image.tmdb.org/t/p/w1280/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg')">
+        <div class="carousel-content pr-5">
+          <h1 class="display-4 w-75 text-white font-weight-normal mb-3">The Walking Dead</h1>
+          <p class="text-white w-75">
+            Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating
+            zombies. He sets out to find his family and encounters many other survivors along the way.
+          </p>
+          <a href="#!" class="btn btn-primary round px-3" data-toggle="modal" data-target="#exampleModal">Trailer</a>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#bootstrapCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#bootstrapCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <section class="tvshow py-5">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w342/5nSSkcM3TgpllZ7yTyBOQEgAX36.jpg" alt="" class="card-img-top">
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w342/nVN7Dt0Xr78gnJepRsRLaLYklbY.jpg" alt="" class="card-img-top">
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w342/gwPSoYUHAKmdyVywgLpKKA4BjRr.jpg" alt="" class="card-img-top">
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w342/bjU4tLlyp8W4yTB0Hqn8J1IDUnD.jpg" alt="" class="card-img-top">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="year-tvshow bg-light mt-0 py-5">
+    <div class="container">
+      <h1 class="text-center mb-4">TV Series of The Year</h1>
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w342/1BctTvvzA0afApgZMmtXnfvy5G4.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">Game of Silence</h4>
+              <p class="text-truncate">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, suscipit. Blanditiis reprehenderit
+                eligendi tempore? Facere ea natus quia odio quo error dicta maiores alias omnis pariatur, ab quam at
+                ipsum.
+              </p>
+              <a href="#!" class="text-primary">See Detail</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w342/58GKcwFV3lpVOGzybeMrrNOjHpz.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">Fairy Tail</h4>
+              <p class="text-truncate">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, suscipit. Blanditiis reprehenderit
+                eligendi tempore? Facere ea natus quia odio quo error dicta maiores alias omnis pariatur, ab quam at
+                ipsum.
+              </p>
+              <a href="#!" class="text-primary">See Detail</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w342/yeJyZkhO7WS4jJl2xqQjnRTHwuE.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">One Piece</h4>
+              <p class="text-truncate">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, suscipit. Blanditiis reprehenderit
+                eligendi tempore? Facere ea natus quia odio quo error dicta maiores alias omnis pariatur, ab quam at
+                ipsum.
+              </p>
+              <a href="#!" class="text-primary">See Detail</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w342/fki3kBlwJzFp8QohL43g9ReV455.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">The Flash</h4>
+              <p class="text-truncate">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, suscipit. Blanditiis reprehenderit
+                eligendi tempore? Facere ea natus quia odio quo error dicta maiores alias omnis pariatur, ab quam at
+                ipsum.
+              </p>
+              <a href="#!" class="text-primary">See Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w342/5nSSkcM3TgpllZ7yTyBOQEgAX36.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">Hanna</h4>
+              <p class="text-truncate">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, suscipit. Blanditiis reprehenderit
+                eligendi tempore? Facere ea natus quia odio quo error dicta maiores alias omnis pariatur, ab quam at
+                ipsum.
+              </p>
+              <a href="#!" class="text-primary">See Detail</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w342/nVN7Dt0Xr78gnJepRsRLaLYklbY.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">Doom Patrol</h4>
+              <p class="text-truncate">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, suscipit. Blanditiis reprehenderit
+                eligendi tempore? Facere ea natus quia odio quo error dicta maiores alias omnis pariatur, ab quam at
+                ipsum.
+              </p>
+              <a href="#!" class="text-primary">See Detail</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w342/gwPSoYUHAKmdyVywgLpKKA4BjRr.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">Game of Thrones</h4>
+              <p class="text-truncate">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, suscipit. Blanditiis reprehenderit
+                eligendi tempore? Facere ea natus quia odio quo error dicta maiores alias omnis pariatur, ab quam at
+                ipsum.
+              </p>
+              <a href="#!" class="text-primary">See Detail</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w342/bjU4tLlyp8W4yTB0Hqn8J1IDUnD.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">The Walking Dead</h4>
+              <p class="text-truncate">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, suscipit. Blanditiis reprehenderit
+                eligendi tempore? Facere ea natus quia odio quo error dicta maiores alias omnis pariatur, ab quam at
+                ipsum.
+              </p>
+              <a href="#!" class="text-primary">See Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav aria-label="Page navigation example" class="mt-4">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#!">1</a></li>
+          <li class="page-item"><a class="page-link" href="#!">2</a></li>
+          <li class="page-item"><a class="page-link" href="#!">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h3 class="text-white">The Basics</h3>
+          <ul>
+            <li><a href="#!">About TMDb</a></li>
+            <li><a href="#!">Contact Us</a></li>
+            <li><a href="#!">Support Forums</a></li>
+            <li><a href="#!">API</a></li>
+            <li><a href="#!">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="text-white">Get Involved</h3>
+          <ul>
+            <li><a href="#!"><span class="glyphicons glyphicons-asterisk"></span> Contribution Bible</a></li>
+            <li><a href="#!">3rd Party Applications</a></li>
+            <li><a href="#!">Add New Movie</a></li>
+            <li><a href="#!">Add New TV Show</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="text-white">Community</h3>
+          <ul>
+            <li><a href="#!">Guidelines</a></li>
+            <li><a href="#!">Leaderboard</a></li>
+            <li><a href="#!">Forums</a></li>
+            <li><a href="#!">Twitter</a></li>
+            <li><a href="#!">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="text-white">Legal</h3>
+          <ul>
+            <li><a href="#!">Terms of Use</a></li>
+            <li><a href="#!">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="./src/main.js"></script>
+</body>
+
+</html>
